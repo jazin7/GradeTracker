@@ -151,7 +151,6 @@ public class GradeTrackerGUI extends JDialog {
                 gesamtCP += Integer.parseInt(subject.getCpTextField().getText());
 
                 if (!"PythonPraktikum".equals(subject.getSubjectName()) &&
-                        !"Seminar".equals(subject.getSubjectName()) &&
                         !"Praktikum".equals(subject.getSubjectName()) &&
                         !"NTW1".equals(subject.getSubjectName()) &&
                         !"NTW2".equals(subject.getSubjectName())) {
@@ -162,7 +161,7 @@ public class GradeTrackerGUI extends JDialog {
             }
         }
         double durchschnitt = totaleNote/benoteteCP;
-        BigDecimal bd = new BigDecimal(durchschnitt).setScale(1, RoundingMode.DOWN);
+        BigDecimal bd = new BigDecimal(durchschnitt).setScale(2, RoundingMode.DOWN);
         noteField.setText(String.valueOf(bd));
         gesamtCPField.setText(String.valueOf(gesamtCP));
     }
